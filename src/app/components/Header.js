@@ -13,14 +13,14 @@ function Header() {
         </div>
 
         {/* mid part */}
-        <div>
-          <p>About</p>
-          <p>Skills</p>
-          <p>Contact</p>
+        <div className="hidden sm:flex flex-row space-x-4">
+          <p className="text-white cursor-pointer ">About</p>
+          <p className="text-white cursor-pointer ">Skills</p>
+          <p className="text-white cursor-pointer ">Contact</p>
         </div>
 
         {/* right part */}
-        <div>
+        <div className="flex space-x-3 items-center">
           <button className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600">
             Linkedin
           </button>
