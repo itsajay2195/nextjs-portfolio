@@ -8,29 +8,15 @@ const skills = [
     id: "0",
     image:
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 20,
-    type: "HTML",
-  },
-  {
-    id: "0",
-    image:
-      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 10,
-    type: "React",
-  },
-  {
-    id: "0",
-    image:
-      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 50,
-    type: "Next Js",
+    progress: 80,
+    type: "Javascript",
   },
   {
     id: "0",
     image:
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
     progress: 80,
-    type: "Javascript",
+    type: "Typescript",
   },
   {
     id: "0",
@@ -46,7 +32,20 @@ const skills = [
     progress: 80,
     type: "React Native",
   },
-
+  {
+    id: "2",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 70,
+    type: "React",
+  },
+  {
+    id: "0",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 50,
+    type: "Next Js",
+  },
   {
     id: "0",
     image:
@@ -54,14 +53,14 @@ const skills = [
     progress: 70,
     type: "Tailwind",
   },
-
   {
-    id: "0",
+    id: "1",
     image:
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 70,
-    type: "C++",
+    progress: 60,
+    type: "HTML",
   },
+
   {
     id: "0",
     image:
@@ -75,6 +74,20 @@ const skills = [
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
     progress: 80,
     type: "Python",
+  },
+  {
+    id: "0",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 30,
+    type: "Java",
+  },
+  {
+    id: "0",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 5,
+    type: "Kotlin",
   },
 ];
 
