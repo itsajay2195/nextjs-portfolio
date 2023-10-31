@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "lottie-web": "^5.12.2",
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.47.0",
     "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
