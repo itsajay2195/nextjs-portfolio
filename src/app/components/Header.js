@@ -1,7 +1,17 @@
+"use client";
 import React from "react";
 
 function Header() {
-  return (
+  const redirectToLinkedIn = () => {
+    const linkedinURL = "https://www.linkedin.com/in/itsajaykumar/"; // Replace this with your LinkedIn profile URL
+    window.open(linkedinURL, "_blank");
+  };
+  //
+  const redirectToGit = () => {
+    const linkedinURL = "https://github.com/itsajay2195/"; // Replace this with your LinkedIn profile URL
+    window.open(linkedinURL, "_blank");
+  };
+  https: return (
     <header className="py-4">
       <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
         {/* //left part */}
@@ -21,10 +31,16 @@ function Header() {
 
         {/* right part */}
         <div className="flex space-x-3 items-center">
-          <button className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600">
+          <button
+            onClick={redirectToLinkedIn}
+            className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600"
+          >
             Linkedin
           </button>
-          <button className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full">
+          <button
+            onClick={redirectToGit}
+            className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full"
+          >
             Github
           </button>
         </div>
