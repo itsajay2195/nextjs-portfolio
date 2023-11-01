@@ -2,6 +2,15 @@
 import React from "react";
 
 function Header() {
+  const handleProjectsClick = (event, name) => {
+    event.preventDefault();
+    const projectsSection = document.getElementById(name);
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+      // handleSetActiveComponent(name);
+    }
+  };
+  let sections = ["Experience", "Skills", "Contact"];
   const redirectToLinkedIn = () => {
     const linkedinURL = "https://www.linkedin.com/in/itsajaykumar/"; // Replace this with your LinkedIn profile URL
     window.open(linkedinURL, "_blank");
@@ -12,21 +21,32 @@ function Header() {
     window.open(linkedinURL, "_blank");
   };
   https: return (
-    <header className="py-4">
+    <header className="py-4  fixed top-0 w-full z-10">
       <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
         {/* //left part */}
         <div>
-          <span className="text-xl text-white curson-pointer font-bold ml-2">
+          <a
+            onClick={(event) => handleProjectsClick(event, "body")}
+            className="text-xl text-white curson-pointer font-bold ml-2"
+          >
             AjayKumar{" "}
             <span className="text-slate-400 font-bold">Rajasekaran</span>
-          </span>
+          </a>
         </div>
 
         {/* mid part */}
         <div className="hidden sm:flex flex-row space-x-4">
-          <p className="text-white cursor-pointer ">About</p>
-          <p className="text-white cursor-pointer ">Skills</p>
-          <p className="text-white cursor-pointer ">Contact</p>
+          {sections.map((item, index) => (
+            <a
+              key={index}
+              onClick={(event) =>
+                handleProjectsClick(event, item.toLowerCase())
+              }
+              className="text-white cursor-pointer"
+            >
+              {item}
+            </a>
+          ))}
         </div>
 
         {/* right part */}

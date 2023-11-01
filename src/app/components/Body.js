@@ -30,8 +30,27 @@ function Body() {
     };
   }, [animationData]);
 
+  const handleResumeClick = () => {
+    window.open(
+      "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing"
+    );
+  };
+
+  const handleContactMeClick = (event, name) => {
+    event.preventDefault();
+    const projectsSection = document.getElementById("contact");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+      // handleSetActiveComponent(name);
+    }
+  };
+
   return (
-    <section className="py-8">
+    <section
+      id={"body"}
+      style={{ height: "93vh" }}
+      className="flex flex-col justify-center py-8"
+    >
       <div className="container px-4 mx-auto">
         {/* First part */}
         <div className="flex flex-col-reverse justify-between md:flex-row md:space-x-8">
@@ -41,15 +60,22 @@ function Body() {
               <Cursor />
             </h1>
             <p className="text-white text-xl md:text-2xl mb-3 mt-2">
-              I am A Frontend Developer who shares programmming knowledge with
-              the community
+              I am A Frontend Developer. I love to work on products whose impact
+              makes life easier.
             </p>
+
             <div>
-              <button className="bg-blue-400 text-white px-4 py-1 rounded mr-4 hover:bg-blue-600">
-                Learn More
+              <button
+                onClick={handleResumeClick}
+                className="bg-blue-400 text-white px-4 py-1 rounded mr-4 hover:bg-blue-600"
+              >
+                Download CV
               </button>
 
-              <button className="bg-gray-300 text-gray-700 px-4 py-1 rounded hover:bg-gray-400">
+              <button
+                onClick={handleContactMeClick}
+                className="bg-gray-300 text-gray-700 px-4 py-1 rounded hover:bg-gray-400"
+              >
                 Contact Me
               </button>
             </div>
@@ -57,7 +83,7 @@ function Body() {
               Coding | Learnings | Lifestyle
             </p>
             <h1 className="text-slate-400 text-xl">
-              2 Years of experience | 5 projects Completed
+              5 Years of experience | 4 projects Completed
             </h1>
           </div>
 
