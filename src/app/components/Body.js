@@ -9,7 +9,7 @@ function Body() {
     words: [
       "Hi, My name is Ajaykumar",
       "React Native developer",
-      "I Love to code More...",
+      "Learning new things daily...",
     ],
     loop: true,
     delaySpeed: 2000,
@@ -32,7 +32,7 @@ function Body() {
 
   const handleResumeClick = () => {
     window.open(
-      "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing"
+      "https://drive.google.com/file/d/1IqhnxyCMaIvT6RIFAZvaBQUoSLS7HENx/view?usp=sharing"
     );
   };
 
