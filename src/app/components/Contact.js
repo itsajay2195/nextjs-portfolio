@@ -22,7 +22,7 @@ function Contact() {
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="h-8 w-8 animate-pulse" />
             <p className="text-xl text-white text-center">
-              ajayrn2195@@gmail.com
+              ajayrn2195@gmail.com
             </p>
           </div>
 
