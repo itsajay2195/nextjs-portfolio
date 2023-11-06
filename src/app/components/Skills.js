@@ -111,11 +111,7 @@ function Skills() {
   }, [animationData]);
 
   return (
-    <div
-      style={{ height: "80vh" }}
-      className="flex flex-col justify-center"
-      id="skills"
-    >
+    <div className="flex flex-col flex-1 justify-center" id="skills">
       <h3 className="tracking-[20px] mx-auto text-center mb-10 uppercase text-gray-400 text-2xl">
         Skills
       </h3>

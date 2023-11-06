@@ -46,11 +46,7 @@ function Body() {
   };
 
   return (
-    <section
-      id={"body"}
-      style={{ height: "93vh" }}
-      className="flex flex-col justify-center py-8"
-    >
+    <section id={"body"} className="flex flex-col justify-center py-8">
       <div className="container px-4 mx-auto">
         {/* First part */}
         <div className="flex flex-col-reverse justify-between md:flex-row md:space-x-8">

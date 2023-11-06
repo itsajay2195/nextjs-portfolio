@@ -21,7 +21,7 @@ function Header() {
     window.open(linkedinURL, "_blank");
   };
   https: return (
-    <header className="py-4  fixed top-0 w-full z-10">
+    <header className="py-4">
       <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
         {/* //left part */}
         <div>
