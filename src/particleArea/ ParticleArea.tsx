@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import ParticlesJson from "./Particles.json";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
