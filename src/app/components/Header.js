@@ -63,7 +63,12 @@ function Header() {
         {/* right part */}
         <div className="flex space-x-3 items-center">
           {socialIcons.map((socialIcon) => (
-            <a href={socialIcon.link} target="_blank" rel="noopener noreferrer">
+            <a
+              key={socialIcon.link}
+              href={socialIcon.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 icon={socialIcon.icon}
                 size="2x"
