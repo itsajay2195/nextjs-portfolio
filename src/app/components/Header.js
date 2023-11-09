@@ -1,6 +1,17 @@
 "use client";
 import React from "react";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const socialIcons = [
+  { icon: faGithub, link: "https://github.com/itsajay2195" },
+  { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },
+  { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
+];
 function Header() {
   const handleProjectsClick = (event, name) => {
     event.preventDefault();
@@ -51,7 +62,16 @@ function Header() {
 
         {/* right part */}
         <div className="flex space-x-3 items-center">
-          <button
+          {socialIcons.map((socialIcon) => (
+            <a href={socialIcon.link} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon
+                icon={socialIcon.icon}
+                size="2x"
+                style={{ paddingRight: 30, color: "#66bfff" }}
+              />
+            </a>
+          ))}
+          {/* <button
             onClick={redirectToLinkedIn}
             className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600"
           >
@@ -62,7 +82,7 @@ function Header() {
             className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full"
           >
             Github
-          </button>
+          </button> */}
         </div>
       </div>
     </header>
