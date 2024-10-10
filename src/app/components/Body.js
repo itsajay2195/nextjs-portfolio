@@ -32,7 +32,7 @@ function Body() {
 
   const handleResumeClick = () => {
     window.open(
-      "https://drive.google.com/file/d/1IqhnxyCMaIvT6RIFAZvaBQUoSLS7HENx/view?usp=sharing"
+      "https://drive.google.com/file/d/1eCdk2MvIHqkI29HXD37Bk-T-u8z_nW38/view?usp=sharing"
     );
   };
 
