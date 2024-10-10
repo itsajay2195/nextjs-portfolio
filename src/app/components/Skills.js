@@ -36,7 +36,7 @@ const skills = [
     id: "2",
     image:
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 70,
+    progress: 80,
     type: "React",
   },
   {
@@ -50,7 +50,7 @@ const skills = [
     id: "0",
     image:
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-    progress: 70,
+    progress: 80,
     type: "Tailwind",
   },
   {
@@ -88,6 +88,20 @@ const skills = [
       "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
     progress: 5,
     type: "Kotlin",
+  },
+  {
+    id: "0",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 60,
+    type: "Realm",
+  },
+  {
+    id: "0",
+    image:
+      "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    progress: 80,
+    type: "Redux/Redux toolkit",
   },
 ];
 

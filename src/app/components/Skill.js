@@ -6,7 +6,7 @@ function Skill({ item }) {
       <p className="text-white text-left">{item?.type}</p>
       <div className="w-full bg-gray-700 rounded-full h-2.5">
         <div
-          style={{ width: item?.progress }}
+          style={{ width: item?.progress * 1.8 }}
           className="bg-green-600 h-2.5 rounded-full"
         ></div>
       </div>
