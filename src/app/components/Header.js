@@ -104,7 +104,7 @@ const Header = () => {
                   handleProjectsClick(event, item.toLowerCase());
                   toggleMenu();
                 }}
-                className="text-white cursor-pointer"
+                className="text-white cursor-pointer h-8 border-b border-gray-300"
               >
                 {item}
               </a>
