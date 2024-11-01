@@ -1,0 +1,42 @@
+/* BlogList.css */
+
+.blog-list-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.blog-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-item h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.blog-item p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.blog-date {
+    font-size: 0.9em;
+    color: #999;
+}
