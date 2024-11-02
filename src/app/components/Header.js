@@ -1,17 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 
-function Header({ sections, socialIcons }) {
+const Header = ({ sections, socialIcons }) => {
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const handleProjectsClick = (event, name) => {
     event.preventDefault();
     const projectsSection = document.getElementById(name);
 
     if (name === "blogs") {
-      console.log("projectsSection>>", name);
       router.push("/blogs");
       return;
     }
@@ -23,30 +26,21 @@ function Header({ sections, socialIcons }) {
     }
   };
 
-  const redirectToLinkedIn = () => {
-    const linkedinURL = "https://www.linkedin.com/in/itsajaykumar/"; // Replace this with your LinkedIn profile URL
-    window.open(linkedinURL, "_blank");
-  };
-  //
-  const redirectToGit = () => {
-    const linkedinURL = "https://github.com/itsajay2195/"; // Replace this with your LinkedIn profile URL
-    window.open(linkedinURL, "_blank");
-  };
-  https: return (
+  return (
     <header className="py-4">
-      <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full cursor-pointer">
-        {/* //left part */}
+      <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
+        {/* Left part */}
         <div>
           <a
             onClick={(event) => handleProjectsClick(event, "body")}
-            className="text-xl text-white curson-pointer font-bold ml-2"
+            className="text-xl text-white cursor-pointer font-bold ml-2"
           >
             AjayKumar{" "}
             <span className="text-slate-400 font-bold">Rajasekaran</span>
           </a>
         </div>
 
-        {/* mid part */}
+        {/* Mid part: Menu sections */}
         <div className="hidden sm:flex flex-row space-x-4">
           {sections.map((item, index) => (
             <a
@@ -61,8 +55,8 @@ function Header({ sections, socialIcons }) {
           ))}
         </div>
 
-        {/* right part */}
-        <div className="flex space-x-3 items-center">
+        {/* Right part: Social Icons */}
+        <div className="hidden sm:flex space-x-3 items-center">
           {socialIcons.map((socialIcon) => (
             <a
               key={socialIcon.link}
@@ -77,22 +71,60 @@ function Header({ sections, socialIcons }) {
               />
             </a>
           ))}
-          {/* <button
-            onClick={redirectToLinkedIn}
-            className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600"
-          >
-            Linkedin
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="sm:hidden">
+          <button onClick={toggleMenu} className="text-white">
+            <FontAwesomeIcon icon="fa-solid fa-bars" />
           </button>
-          <button
-            onClick={redirectToGit}
-            className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full"
-          >
-            Github
-          </button> */}
         </div>
       </div>
+
+      {/* Side menu for smaller screens */}
+      {isMenuOpen && (
+        <div className="fixed top-0 left-0 w-3/4 h-full bg-gray-800 p-5 z-50 sm:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white text-right text-xl mb-4"
+          >
+            &times;
+          </button>
+          <nav className="flex flex-col space-y-4">
+            {sections.map((item, index) => (
+              <a
+                key={index}
+                onClick={(event) => {
+                  handleProjectsClick(event, item.toLowerCase());
+                  toggleMenu();
+                }}
+                className="text-white cursor-pointer h-8 border-b border-gray-300"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-6 space-x-4">
+            {socialIcons.map((socialIcon) => (
+              <a
+                key={socialIcon.link}
+                href={socialIcon.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <FontAwesomeIcon
+                  icon={socialIcon.icon}
+                  size="2x"
+                  className="text-blue-400"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
-}
+};
 
 export default Header;

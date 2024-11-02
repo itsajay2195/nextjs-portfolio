@@ -130,7 +130,8 @@ function Skills() {
         Skills
       </h3>
       <div className="container mx-auto max-w-6xl flex flex-col-reverse md:flex-row items-center justify-between">
-        <div className="md:w-1/2 grid grid-cols-3 gap-5">
+        <div className="md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-10">
+          {/* <div className="flex flex-wrap"> */}
           {skills?.map((item, index) => (
             <Skill key={index} item={item} />
           ))}

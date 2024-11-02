@@ -5,14 +5,16 @@ import { useFetchBlogs } from "../hooks/useFetchBlogs";
 import "../blogList.css";
 import Spinner from "react-bootstrap/Spinner";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/Header";
 
 const BlogList = () => {
   const { blogs, loading } = useFetchBlogs();
 
   return (
     <div className="h-screen bg-gradient-to-b from-slate-800 to-slate-600">
+      <Header sections={[]} socialIcons={[]} />
       {loading && (
-        <div className="h-screen flex justify-center items-center">
+        <div className="my-40 flex justify-center items-center">
           <Spinner animation="grow" variant="primary" />
         </div>
       )}
