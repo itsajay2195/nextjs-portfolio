@@ -53,8 +53,9 @@ const CreateBlog = () => {
     input.click();
 
     input.onchange = async () => {
-      const file = input?.files[0];
-      if (file) {
+      // Check if input.files is not null and has at least one file
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
         try {
           // Upload the image to Firebase and get the download URL
           const imageUrl = await uploadImageToStorage(file);
