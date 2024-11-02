@@ -1,27 +1,28 @@
 "use client";
 import React from "react";
-import {
-  faGithub,
-  faLinkedin,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 
-const socialIcons = [
-  { icon: faGithub, link: "https://github.com/itsajay2195" },
-  { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },
-  { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
-];
-function Header() {
+function Header({ sections, socialIcons }) {
+  const router = useRouter();
+
   const handleProjectsClick = (event, name) => {
     event.preventDefault();
     const projectsSection = document.getElementById(name);
+
+    if (name === "blogs") {
+      console.log("projectsSection>>", name);
+      router.push("/blogs");
+      return;
+    }
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
       // handleSetActiveComponent(name);
+    } else {
+      router.push("/");
     }
   };
-  let sections = ["Experience", "Skills", "Contact"];
+
   const redirectToLinkedIn = () => {
     const linkedinURL = "https://www.linkedin.com/in/itsajaykumar/"; // Replace this with your LinkedIn profile URL
     window.open(linkedinURL, "_blank");
@@ -33,7 +34,7 @@ function Header() {
   };
   https: return (
     <header className="py-4">
-      <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
+      <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full cursor-pointer">
         {/* //left part */}
         <div>
           <a
