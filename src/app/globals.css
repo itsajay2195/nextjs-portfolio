@@ -2,3 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Place this in a global CSS file or within a <style jsx global> in your component */
+
+.ql-editor .ql-code-block-container {
+    background-color: #2e2e2e;
+    /* Dark background */
+    color: #f8f8f2;
+    /* Light text color */
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.ql-editor .ql-code-block {
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    padding: 8px;
+    font-family: monospace;
+}
+
+.ql-editor img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Keeps aspect ratio */
+    max-height: 400px;
+    /* Adjust this value based on desired max height */
+}
+
+.ql-editor blockquote {
+    border-left: 4px solid #66bfff;
+    /* blue border for emphasis */
+    padding-left: 16px;
+    margin-left: 0;
+    color: #6b7280;
+    /* subtle gray color */
+    font-style: italic;
+    font-size: 1.1em;
+    background-color: #f9fafb;
+    /* light background for contrast */
+}
+
+.ql-editor h1 {
+    color: #f1f5f9;
+    /* light gray for prominent headers */
+}
+
+.ql-editor h2 {
+    color: #e2e8f0;
+    /* slightly darker gray for secondary headers */
+}
+
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor p,
+.ql-editor span,
+.ql-editor div {
+    color: #cbd5e1;
+    /* medium gray for general content */
+}
+
+.ql-editor blockquote {
+    color: #94a3b8;
+    /* subtle slate-gray for quotes */
+    border-left: 4px solid #64748b;
+    /* matching border for a soft, subtle emphasis */
+    padding-left: 10px;
+    font-style: italic;
+}
+
+
+
+.ql-editor ul {
+    list-style-type: disc;
+    color: #cbd5e1;
+    /* medium gray to match general text */
+    padding-left: 20px;
+}
+
+.ql-editor ol {
+    list-style-type: decimal;
+    color: #cbd5e1;
+    /* medium gray for numbered lists */
+    padding-left: 20px;
+}
+
+/* Customize list items */
+.ql-editor li {
+    color: #cbd5e1;
+    /* medium gray for list text */
+    margin-bottom: 8px;
+    /* space between items */
+}
+
+/* Optional: Different color for bullets */
+.ql-editor ul li::marker {
+    color: #94a3b8;
+    /* subtle slate-gray color for bullets */
+}
+
+/* Optional: Different color for numbers */
+.ql-editor ol li::marker {
+    color: #94a3b8;
+    /* same slate-gray color for numbers */
+}

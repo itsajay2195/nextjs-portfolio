@@ -1,35 +1,29 @@
 "use client";
 import React, { useState } from "react";
-import {
-  faGithub,
-  faLinkedin,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
 
-library.add(faBars);
-
-const handleProjectsClick = (event, name) => {
-  event.preventDefault();
-  const projectsSection = document.getElementById(name);
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: "smooth" });
-    // handleSetActiveComponent(name);
-  }
-};
-
-const Header = () => {
+const Header = ({ sections, socialIcons }) => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let sections = ["Experience", "Skills", "Contact"];
-  const socialIcons = [
-    { icon: faGithub, link: "https://github.com/itsajay2195" },
-    { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },
-    { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
-  ];
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleProjectsClick = (event, name) => {
+    event.preventDefault();
+    const projectsSection = document.getElementById(name);
+
+    if (name === "blogs") {
+      router.push("/blogs");
+      return;
+    }
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+      // handleSetActiveComponent(name);
+    } else {
+      router.push("/");
+    }
   };
 
   return (
