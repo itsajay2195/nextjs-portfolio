@@ -11,7 +11,7 @@ const CreateBlog = () => {
   const editorRef = useRef(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const quillInstanceRef = useRef(null); // To store the Quill instance
+  const quillInstanceRef = useRef<Quill | null>(null); // To store the Quill instance
 
   // Initialize Quill editor
   useEffect(() => {
