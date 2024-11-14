@@ -1,7 +1,7 @@
 // components/Layout.js
 "use client";
 import { useEffect } from "react";
-import { initGA, logPageView } from ".././../utils/analytics";
+import { initGA, logPageView } from "../../utils/analytics";
 
 const Layout = ({ children }) => {
   useEffect(() => {

@@ -5,7 +5,6 @@ import "quill/dist/quill.snow.css";
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { getBlogBySlug } from "@/utils/fireStoreHelpers";
-import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import Spinner from "react-bootstrap/Spinner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "@/app/components/Header";
@@ -30,7 +29,7 @@ const BlogPage: React.FC = () => {
         setLoading(false);
       });
     }
-  }, []);
+  }, [pathname]);
 
   // if (loading) return <Spinner animation="grow" variant="primary" />;
   // if (!blog) return <p>Blog post not found.</p>;

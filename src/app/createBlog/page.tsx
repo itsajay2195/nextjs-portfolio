@@ -1,84 +1,56 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
-import Quill from "quill";
-import "quill/dist/quill.snow.css"; // Import Quill styles
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import "quill/dist/quill.snow.css";
 import {
   publishBlogPost,
   uploadImageToStorage,
 } from "../../utils/fireStoreHelpers";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const CreateBlog = () => {
   const editorRef = useRef(null);
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const quillInstanceRef = useRef<Quill | null>(null); // To store the Quill instance
+  const [value, setValue] = useState("");
 
-  // Initialize Quill editor
-  useEffect(() => {
-    if (editorRef.current && !quillInstanceRef.current) {
-      // Check if Quill has already been initialized
-      const quill = new Quill(editorRef.current, {
-        theme: "snow",
-        modules: {
-          toolbar: {
-            container: [
-              [{ header: [1, 2, false] }],
-              ["bold", "italic", "underline", "strike"], // toggled buttons
-              ["blockquote", "code-block"],
-              [{ list: "ordered" }, { list: "bullet" }],
-              [{ script: "sub" }, { script: "super" }], // superscript/subscript
-              [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-              ["image"], // Option to add image
-              ["clean"], // remove formatting button
-            ],
-            handlers: {
-              image: () => handleImageUpload(quill), // Custom image upload handler
-            },
-          },
-        },
-      });
+  const handleImageUpload = useCallback(async () => {
+    console.log;
+    const quill = editorRef.current; // Use Quill instance from editorRef
 
-      quill.on("text-change", () => {
-        setContent(quill.root.innerHTML); // Save the editor content as HTML
-      });
+    console.log("log is", editorRef?.current);
+    // if (typeof document !== "undefined") {
+    //   const input = document.createElement("input");
+    //   input.setAttribute("type", "file");
+    //   input.setAttribute("accept", "image/*");
+    //   input.click();
 
-      // Store the Quill instance in a ref
-      quillInstanceRef.current = quill;
-    }
+    //   input.onchange = async () => {
+    //     if (input.files && input.files[0]) {
+    //       const file = input.files[0];
+    //       try {
+    //         const imageUrl = await uploadImageToStorage(file);
+    //         const range = quill?.getSelection(true); // Get current selection
+    //         if (range) {
+    //           quill.insertEmbed(range.index, "image", imageUrl); // Insert image at cursor
+    //           setValue(quill.root.innerHTML); // Update state to reflect the new content
+    //         }
+    //       } catch (error) {
+    //         console.error("Error uploading image:", error);
+    //       }
+    //     }
+    //   };
+    // }
   }, [editorRef]);
-  const handleImageUpload = (quill: any) => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
 
-    input.onchange = async () => {
-      // Check if input.files is not null and has at least one file
-      if (input.files && input.files[0]) {
-        const file = input.files[0];
-        try {
-          // Upload the image to Firebase and get the download URL
-          const imageUrl = await uploadImageToStorage(file);
-          // Insert the image URL into the editor
-          const range = quill.getSelection();
-          quill.insertEmbed(range.index, "image", imageUrl);
-        } catch (error) {
-          console.error("Error uploading image:", error);
-        }
-      }
-    };
-  };
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title || !content) {
+    if (!title || !value) {
       alert("Please enter both title and content.");
       return;
     }
 
-    console.log("clld>>");
-
-    await publishBlogPost(title, content);
+    await publishBlogPost(title, value);
   };
 
   return (
@@ -90,10 +62,30 @@ const CreateBlog = () => {
         onChange={(e) => setTitle(e.target.value)}
         required
       />
-      <div ref={editorRef} style={{ height: "300px", margin: "20px 0" }} />
-      <button type="submit" onClick={handleSubmit}>
-        Publish Blog
-      </button>
+      <ReactQuill
+        ref={editorRef}
+        theme="snow"
+        value={value}
+        onChange={setValue}
+        modules={{
+          toolbar: {
+            container: [
+              [{ header: [1, 2, false] }],
+              ["bold", "italic", "underline", "strike"],
+              ["blockquote", "code-block"],
+              [{ list: "ordered" }, { list: "bullet" }],
+              [{ script: "sub" }, { script: "super" }],
+              [{ indent: "-1" }, { indent: "+1" }],
+              ["image"],
+              ["clean"],
+            ],
+            handlers: {
+              image: handleImageUpload,
+            },
+          },
+        }}
+      />
+      <button type="submit">Publish Blog</button>
     </form>
   );
 };
