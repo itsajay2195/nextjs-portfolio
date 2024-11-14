@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ sections, socialIcons }) => {
   const router = useRouter();
@@ -76,7 +77,8 @@ const Header = ({ sections, socialIcons }) => {
         {/* Mobile menu button */}
         <div className="sm:hidden">
           <button onClick={toggleMenu} className="text-white">
-            <FontAwesomeIcon icon="fa-solid fa-bars" />
+            {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
+            <FontAwesomeIcon icon={faBars} />
           </button>
         </div>
       </div>
