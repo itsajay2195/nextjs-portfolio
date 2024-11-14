@@ -43,7 +43,7 @@ const CreateBlog = () => {
     // }
   }, [editorRef]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!title || !value) {
       alert("Please enter both title and content.");
@@ -63,7 +63,6 @@ const CreateBlog = () => {
         required
       />
       <ReactQuill
-        ref={editorRef}
         theme="snow"
         value={value}
         onChange={setValue}
