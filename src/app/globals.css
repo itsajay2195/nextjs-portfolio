@@ -12,10 +12,23 @@
     /* Light text color */
     padding: 8px;
     border-radius: 4px;
-    overflow-x: auto;
+    overflow-x: scroll;
+    min-height: 100px;
+    /* Set minimum height */
+    max-height: 500px;
+    /* Set maximum height */
+    height: auto;
+    /* Allows the height to be flexible within the min-max range */
 }
 
 .ql-editor .ql-code-block {
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    padding: 8px;
+    font-family: monospace;
+}
+
+.ql-editor .ql-syntax {
     background-color: #2e2e2e;
     color: #f8f8f2;
     padding: 8px;

@@ -29,7 +29,11 @@ const Header = ({ sections, socialIcons }) => {
 
   return (
     <header className="py-4">
-      <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full">
+      {/* <div className="mx-10 sm:mx-auto max-w-8xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full"> */}
+      <div
+        className="mx-auto max-w-8xl px-4 flex items-center justify-between border border-zinc-600 p-3 rounded-full"
+        style={{ width: "90%" }}
+      >
         {/* Left part */}
         <div>
           <a

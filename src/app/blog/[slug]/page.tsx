@@ -75,7 +75,7 @@ const styles = {
     fontFamily: "Arial, sans-serif",
   },
   title: {
-    fontSize: "24px",
+    fontSize: "32px",
     fontWeight: "bold",
     color: "white",
   },
