@@ -60,8 +60,16 @@ export const publishBlogPost = async (title, content, author = "Ajaykumar") => {
     // Reference the collection where blog posts are stored
     const blogCollectionRef = collection(db, "blogs");
 
+    // Get the existing blogs to determine the current count
+    const blogSnapshot = await getDocs(blogCollectionRef);
+    const blogCount = blogSnapshot.size; // Get the number of existing blogs
+
+    // Increment the blog count to create the new ID
+    const newBlogId = blogCount + 1;
+
     // Structure the blog data
     const blogData = {
+      id: newBlogId?.toString(),
       title,
       content, // HTML or rich text content
       author,
