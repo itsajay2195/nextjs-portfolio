@@ -51,7 +51,8 @@ const BlogPage: React.FC = () => {
       )}
 
       {blog && blog?.content && (
-        <div className=" mx-24 py-10  ">
+        // <div className=" mx-24 py-10  ">
+        <div className="mx-4 sm:mx-10 lg:mx-24 py-10 max-w-screen-lg">
           <h1 style={styles.title}>{blog.title}</h1>
           <p style={styles.date}>
             Published on{" "}
