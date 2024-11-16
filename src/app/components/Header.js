@@ -79,12 +79,14 @@ const Header = ({ sections, socialIcons }) => {
         </div>
 
         {/* Mobile menu button */}
-        <div className="sm:hidden">
-          <button onClick={toggleMenu} className="text-white">
-            {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-        </div>
+        {sections?.length > 0 ? (
+          <div className="sm:hidden">
+            <button onClick={toggleMenu} className="text-white">
+              {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
+              <FontAwesomeIcon icon={faBars} />
+            </button>
+          </div>
+        ) : null}
       </div>
 
       {/* Side menu for smaller screens */}
