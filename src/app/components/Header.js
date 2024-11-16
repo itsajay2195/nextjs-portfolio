@@ -88,7 +88,7 @@ const Header = ({ sections, socialIcons }) => {
       </div>
 
       {/* Side menu for smaller screens */}
-      {isMenuOpen && (
+      {isMenuOpen && sections?.length > 0 && (
         <div className="fixed top-0 left-0 w-3/4 h-full bg-gray-800 p-5 z-50 sm:hidden">
           <button
             onClick={toggleMenu}
