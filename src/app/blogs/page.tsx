@@ -27,7 +27,7 @@ const BlogList = () => {
         </div>
       )}
 
-      <Chip.Group multiple={false} value={value} onChange={setValue}>
+      {/* <Chip.Group multiple={false} value={value} onChange={setValue}>
         <Group>
           <Chip value="first" onClick={handleChipClick}>
             First
@@ -39,7 +39,7 @@ const BlogList = () => {
             Third
           </Chip>
         </Group>
-      </Chip.Group>
+      </Chip.Group> */}
       {!loading && (
         <div className="blog-list-container">
           <h1>Latest Blog Posts</h1>
