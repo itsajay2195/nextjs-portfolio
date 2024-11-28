@@ -10,4 +10,4 @@ export const socialIcons = [
   { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
 ];
 
-export const sections = ["Experience", "Skills", "Contact", "Blogs"];
+export const sections = ["Experience", "Skills", "Contact"];
