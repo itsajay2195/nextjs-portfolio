@@ -1,53 +1,54 @@
 /* BlogList.css */
 
 .blog-list-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #e2e8f0;
-    /* Light gray for overall text to contrast the dark background */
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #e2e8f0;
+  overflow: scroll;
+  /* Light gray for overall text to contrast the dark background */
 }
 
 h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #f1f5f9;
-    /* Soft white for main heading */
-    margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #f1f5f9;
+  /* Soft white for main heading */
+  margin-bottom: 20px;
 }
 
 .blog-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .blog-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #475569;
-    /* Slate color with lighter shade for item background */
-    border-radius: 5px;
-    border-bottom: 1px solid #94a3b8;
-    /* Subtle gray-blue border to separate items */
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #475569;
+  /* Slate color with lighter shade for item background */
+  border-radius: 5px;
+  border-bottom: 1px solid #94a3b8;
+  /* Subtle gray-blue border to separate items */
 }
 
 .blog-item h2 {
-    color: #e2e8f0;
-    /* Light gray for subheading to contrast the dark item background */
-    font-size: 1.5em;
-    margin: 0;
+  color: #e2e8f0;
+  /* Light gray for subheading to contrast the dark item background */
+  font-size: 1.5em;
+  margin: 0;
 }
 
 .blog-item p {
-    color: #cbd5e1;
-    /* Medium gray for paragraph text */
-    margin: 5px 0;
+  color: #cbd5e1;
+  /* Medium gray for paragraph text */
+  margin: 5px 0;
 }
 
 .blog-date {
-    font-size: 0.9em;
-    color: #94a3b8;
-    /* Subtle gray-blue color for date text */
-    font-style: italic;
+  font-size: 0.9em;
+  color: #94a3b8;
+  /* Subtle gray-blue color for date text */
+  font-style: italic;
 }
