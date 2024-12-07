@@ -21,6 +21,7 @@ h1 {
 .blog-list {
   list-style-type: none;
   padding: 0;
+  margin-top: 18px;
 }
 
 .blog-item {
