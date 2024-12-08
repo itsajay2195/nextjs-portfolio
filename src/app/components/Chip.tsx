@@ -5,7 +5,7 @@ import { Chip, Group } from "@mantine/core";
 interface ChipProps {
   data: any;
   value?: string;
-  onPress?: (() => void) | ((val: any) => void);
+  onPress?: (val: any) => void;
   onChange?: any;
 }
 
@@ -18,7 +18,9 @@ const ChipComponent = ({ data, value, onPress, onChange }: ChipProps) => {
           value={""}
           checked={item?.isSelected}
           onClick={() => {
-            onPress(item?.value);
+            if (typeof onPress === "function") {
+              onPress(item.value); // Safely invoke onPress
+            }
           }}
         >
           {item?.value}
