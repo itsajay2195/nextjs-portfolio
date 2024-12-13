@@ -53,6 +53,7 @@ const Header = ({ sections, socialIcons }) => {
               onClick={(event) =>
                 handleProjectsClick(event, item.toLowerCase())
               }
+              href={item}
               className="text-white cursor-pointer"
             >
               {item}
