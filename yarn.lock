@@ -19,6 +19,11 @@
   dependencies:
     "regenerator-runtime" "^0.14.0"
 
+"@corex/deepmerge@^4.0.43":
+  "integrity" "sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ=="
+  "resolved" "https://registry.npmjs.org/@corex/deepmerge/-/deepmerge-4.0.43.tgz"
+  "version" "4.0.43"
+
 "@eslint-community/eslint-utils@^4.2.0":
   "integrity" "sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA=="
   "resolved" "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz"
@@ -618,6 +623,11 @@
   "integrity" "sha512-wpemDaqOJc1zsvnjaic1+KRQSy7dZhQ4XDwxqqq5MwG6aImCHqEBVf17Qhj3sDjpA7pnpxnKAHotLqfzjQn3dQ=="
   "resolved" "https://registry.npmjs.org/@mantine/store/-/store-7.14.1.tgz"
   "version" "7.14.1"
+
+"@next/env@^13.4.3":
+  "integrity" "sha512-uVuRqoj28Ys/AI/5gVEgRAISd0KWI0HRjOO1CTpNgmX3ZsHb5mdn14Y59yk0IxizXdo7ZjsI2S7qbWnO+GNBcA=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.5.7.tgz"
+  "version" "13.5.7"
 
 "@next/env@14.0.0":
   "integrity" "sha512-cIKhxkfVELB6hFjYsbtEeTus2mwrTC+JissfZYM0n+8Fv+g8ucUfOlm3VEDtwtwydZ0Nuauv3bl0qF82nnCAqA=="
@@ -1850,7 +1860,7 @@
   "resolved" "https://registry.npmjs.org/fast-diff/-/fast-diff-1.1.2.tgz"
   "version" "1.1.2"
 
-"fast-glob@^3.2.9", "fast-glob@^3.3.0", "fast-glob@^3.3.1":
+"fast-glob@^3.2.12", "fast-glob@^3.2.9", "fast-glob@^3.3.0", "fast-glob@^3.3.1":
   "integrity" "sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg=="
   "resolved" "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.1.tgz"
   "version" "3.3.1"
@@ -2960,7 +2970,7 @@
   dependencies:
     "brace-expansion" "^1.1.7"
 
-"minimist@^1.2.0", "minimist@^1.2.6":
+"minimist@^1.2.0", "minimist@^1.2.6", "minimist@^1.2.8":
   "integrity" "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
   "version" "1.2.8"
@@ -2988,6 +2998,16 @@
   "integrity" "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw=="
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
+
+"next-sitemap@^4.2.3":
+  "integrity" "sha512-vjdCxeDuWDzldhCnyFCQipw5bfpl4HmZA7uoo3GAaYGjGgfL4Cxb1CiztPuWGmS+auYs7/8OekRS8C2cjdAsjQ=="
+  "resolved" "https://registry.npmjs.org/next-sitemap/-/next-sitemap-4.2.3.tgz"
+  "version" "4.2.3"
+  dependencies:
+    "@corex/deepmerge" "^4.0.43"
+    "@next/env" "^13.4.3"
+    "fast-glob" "^3.2.12"
+    "minimist" "^1.2.8"
 
 "next@14.0.0":
   "integrity" "sha512-J0jHKBJpB9zd4+c153sair0sz44mbaCHxggs8ryVXSFBuBqJ8XdE9/ozoV85xGh2VnSjahwntBZZgsihL9QznA=="

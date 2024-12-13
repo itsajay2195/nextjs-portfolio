@@ -8,6 +8,7 @@ import { getBlogBySlug } from "@/utils/fireStoreHelpers";
 import Spinner from "react-bootstrap/Spinner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "@/app/components/Header";
+import Head from "next/head";
 
 // Import your fetching function
 
@@ -53,6 +54,33 @@ const BlogPage: React.FC = () => {
       {blog && blog?.content && (
         // <div className=" mx-24 py-10  ">
         <div className="mx-[5%] sm:mx-[5%] lg:mx-auto lg:w-[90%] py-10">
+          <Head>
+            <title>{blog?.title} - Ajaykumar Rajasekaran</title>
+            <meta
+              name="keywords"
+              content={`${blog?.title}, Ajaykumar Rajasekaran`}
+            />
+            <meta
+              property="og:title"
+              content={`${blog?.title} - React Native Insights`}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Person",
+                  name: "Ajaykumar Rajasekaran",
+                  url: "https://ajayrne.com",
+                  jobTitle: "React Native Developer",
+                  sameAs: [
+                    "https://www.linkedin.com/in/itsajaykumar/",
+                    "https://github.com/itsajay2195",
+                  ],
+                }),
+              }}
+            />
+          </Head>
           <h1 style={styles.title}>{blog.title}</h1>
           <p style={styles.date}>
             Published on{" "}

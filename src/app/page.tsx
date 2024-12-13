@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main className="h-screen overflow-y-scroll bg-gradient-to-b from-slate-800 to-slate-600">
       <Head>
+        <link rel="canonical" href="https://ajayrne.com/" />
         <title>Ajaykumar Rajasekaran</title>
         <meta
           name="description"
