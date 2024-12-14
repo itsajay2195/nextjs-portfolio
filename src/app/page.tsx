@@ -14,6 +14,25 @@ export default function Home() {
       <Head>
         <link rel="canonical" href="https://ajayrne.com/" />
         <title>Ajaykumar Rajasekaran</title>
+        <title>Ajaykumar Rajasekaran - React and React Native Developer</title>
+        <meta
+          name="description"
+          content="Ajaykumar Rajasekaran - React and React Native Developer showcasing projects, blogs, and skills. Explore insights into React and modern web development."
+        />
+        <meta
+          name="keywords"
+          content="Ajaykumar Rajasekaran, React Developer, React Native Developer, Software Engineer, Portfolio, ajayrne.com"
+        />
+        <meta name="author" content="Ajaykumar Rajasekaran" />
+        <meta
+          property="og:title"
+          content="Ajaykumar Rajasekaran - React and React Native Developer"
+        />
+        <meta
+          property="og:description"
+          content="Welcome to the portfolio of Ajaykumar Rajasekaran, a skilled React and React Native developer. Explore projects and blogs."
+        />
+        <meta property="og:url" content="https://ajayrne.com" />
         <meta
           name="description"
           content="Ajaykumar Rajasekaran's personal website showcasing my React and React Native projects, blog posts, and portfolio."
