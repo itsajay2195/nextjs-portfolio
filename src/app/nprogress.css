@@ -1,0 +1,23 @@
+/* src/styles/nprogress.css */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: linear-gradient(90deg, #1e293b, #475569); /* Slate gradient */
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Standard progress bar height */
+  box-shadow: 0 0 10px #d1e0f4, 0 0 5px #1155b4; /* Subtle glow matching the gradient */
+}
+
+#nprogress .peg {
+  display: none; /* Hide the little bouncing peg */
+}
+
+#nprogress .spinner {
+  display: none; /* Hide the spinner */
+}

@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import { useState } from "react";
 import Chip from "../components/Chip";
 import AutoComplete from "../components/AutoComplete";
+import Layout from "../components/Layout";
 
 const BlogList = () => {
   const [value, setValue] = useState<string | null>("first");
@@ -38,47 +39,49 @@ const BlogList = () => {
   );
 
   return (
-    <div className="h-screen bg-gradient-to-b from-slate-800 to-slate-600 overflow-scroll">
-      <Header sections={[]} socialIcons={[]} />
-      {loading && (
-        <div className="my-40 flex justify-center items-center">
-          <Spinner animation="grow" variant="primary" />
-        </div>
-      )}
+    <Layout>
+      <div className="h-screen bg-gradient-to-b from-slate-800 to-slate-600 overflow-scroll">
+        <Header sections={[]} socialIcons={[]} />
+        {loading && (
+          <div className="my-40 flex justify-center items-center">
+            <Spinner animation="grow" variant="primary" />
+          </div>
+        )}
 
-      {!loading && (
-        <div className="blog-list-container">
-          <h1>Latest Blog Posts</h1>
-          <AutoComplete
-            data={tags}
-            placeholder={"Search by tags..."}
-            onItemSelected={onItemSelected}
-          />
-          {selectedTags?.length > 0 ? (
-            <div style={{ marginTop: 18 }}>
-              <Chip data={selectedTags} onPress={onItemSelected} />
-            </div>
-          ) : null}
-          <ul className="blog-list">
-            {blogs.map((blog: any, index: any) => (
-              <li key={blog?.id || index} className="blog-item">
-                <Link href={`/blog/${blog.id}`}>
-                  <h2>{blog.title}</h2>
-                  <p>{blog.description}</p>
-                  <p className="blog-date">
-                    Published on{" "}
-                    {new Date(
-                      blog.createdAt.seconds * 1000
-                    ).toLocaleDateString()}
-                  </p>
-                  <Chip data={blog.tags} />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+        {!loading && (
+          <div className="blog-list-container">
+            <h1>Latest Blog Posts</h1>
+            <AutoComplete
+              data={tags}
+              placeholder={"Search by tags..."}
+              onItemSelected={onItemSelected}
+            />
+            {selectedTags?.length > 0 ? (
+              <div style={{ marginTop: 18 }}>
+                <Chip data={selectedTags} onPress={onItemSelected} />
+              </div>
+            ) : null}
+            <ul className="blog-list">
+              {blogs.map((blog: any, index: any) => (
+                <li key={blog?.id || index} className="blog-item">
+                  <Link href={`/blog/${blog.id}`}>
+                    <h2>{blog.title}</h2>
+                    <p>{blog.description}</p>
+                    <p className="blog-date">
+                      Published on{" "}
+                      {new Date(
+                        blog.createdAt.seconds * 1000
+                      ).toLocaleDateString()}
+                    </p>
+                    <Chip data={blog.tags} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </Layout>
   );
 };
 
