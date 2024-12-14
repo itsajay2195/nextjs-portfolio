@@ -30,8 +30,6 @@ const CreateBlog = () => {
   useEffect(() => {
     setTimeout(async () => {
       if (typeof window === "undefined" || !quillRef.current) return;
-
-      console.log("typeof", typeof window);
       // Initialize Quill
       const Quill = (await import("quill")).default;
       const quill = new Quill(quillRef.current, {
@@ -81,7 +79,6 @@ const CreateBlog = () => {
       // Handle content change
       quill.on("text-change", () => {
         setValue(quill.root.innerHTML);
-        console.log("Content changed:", quill.root.innerHTML);
       });
 
       // Add custom image handler to the toolbar
@@ -114,8 +111,6 @@ const CreateBlog = () => {
     //   quill.off("text-change");
     // };
   }, []);
-
-  console.log("quil ref>>>>,", quillRef?.current);
 
   return (
     <form onSubmit={handleSubmit}>

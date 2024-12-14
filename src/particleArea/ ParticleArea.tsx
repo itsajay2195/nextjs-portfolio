@@ -5,7 +5,7 @@ import type { Container, Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 const ParticleArea = () => {
   const particlesInit = React.useCallback(async (engine: Engine) => {
-    console.log(engine);
+    // console.log(engine);
 
     await loadSlim(engine);
   }, []);
